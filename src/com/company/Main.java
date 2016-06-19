@@ -11,9 +11,11 @@ public class Main {
 
         Teacher t = new Teacher();
 
-        String n,q,c;
+        Student obj = new Student();
 
-        int i,sa,b;
+        String i,n,q,c,sa,cou;
+
+        int b,tch=0,std=0,no=1,no1=0;
 
         do
 
@@ -24,7 +26,13 @@ public class Main {
 
             System.out.println();
 
-            System.out.println("\tPress 1 To Add A New Teacher , 2 To View Teacher & 3 For EXIT !!!");
+            System.out.println("\tWELCOME TO UNIVERSITY MANAGEMENT SYSTEM !!!");
+
+            System.out.println("Press 1 For Teacher");
+
+            System.out.println("Press 2 For Student");
+
+            System.out.println("Press 3 For Exit");
 
             System.out.println();
 
@@ -33,39 +41,172 @@ public class Main {
 
             switch (b) {
                 case 1:
-                    System.out.println("Enter Id Of Teacher : ");
 
-                    i = s.nextInt();
+                    do
 
-                    System.out.println("Enter Name Of Teacher : ");
+                    {
 
-                    n = s.next();
+                        System.out.println("------------------------------------------------------------------------------------");
 
-                    System.out.println("Enter Qualification Of Teacher : ");
+                        System.out.println();
 
-                    q = s.next();
+                        System.out.println("\tTeacher !!!");
 
-                    System.out.println("Enter Contact Number Of Teacher : ");
+                        System.out.println("Press 1 To Insert A Teacher");
 
-                    c = s.next();
+                        System.out.println("Press 2 To View All Teacher");
 
-                    System.out.println("Enter Salary Of Teacher : ");
+                        System.out.println("Press 3 For Exit");
 
-                    sa = s.nextInt();
+                        System.out.println();
 
-                    t.Add(i, n, q, c, sa);
+                        tch = s.nextInt();
+
+
+                        switch (tch) {
+                            case 1:
+                                System.out.println("Enter Id Of Teacher : ");
+
+                                i = s.next();
+
+                                System.out.println("Enter Name Of Teacher : ");
+
+                                n = s.next();
+
+                                System.out.println("Enter Qualification Of Teacher : ");
+
+                                q = s.next();
+
+                                System.out.println("Enter Contact Number Of Teacher : ");
+
+                                c = s.next();
+
+                                System.out.println("Enter Salary Of Teacher : ");
+
+                                sa = s.next();
+
+
+                                t.Insert(i, n, q, c, sa, no);
+
+                                no++;
+
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 2:
+
+                                t.View(no);
+
+                                break;
+
+
+                            default:
+
+                                System.out.println("Invalid Input ! ");
+                                break;
+
+                        }
+                        }
+                        while (tch != 3) ;
+
+
 
                     break;
 
-                case  3:
-                    break;
 
                 case 2:
 
-                    t.View();
+                    do
+
+                    {
+
+                        System.out.println("------------------------------------------------------------------------------------");
+
+                        System.out.println();
+
+                        System.out.println("\tStudents !!!");
+
+                        System.out.println("Press 1 To Insert A Student");
+
+                        System.out.println("Press 2 To View All Students");
+
+                        System.out.println("Press 3 For Exit");
+
+                        System.out.println();
+
+                        std = s.nextInt();
+
+
+                        switch (std) {
+                            case 1:
+                                System.out.println("Enter Roll# of Student : ");
+
+                                i = s.next();
+
+                                System.out.println("Enter Name Of Student : ");
+
+                                n = s.next();
+
+                                System.out.println("Enter Semester of Student : ");
+
+                                q = s.next();
+
+                                System.out.println("Enter Section of Student : ");
+
+                                c = s.next();
+
+                                System.out.println("Enter Batch of Student : ");
+
+                                sa = s.next();
+
+                                System.out.println("Enter Course Name of Student: ");
+
+                                cou = s.next();
+
+                                obj.Inserts(i, n, q, c, sa,cou, no1);
+
+                                no1++;
+
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 2:
+
+                                obj.Views(no1);
+
+                                break;
+
+
+                            default:
+
+                                System.out.println("Invalid Input ! ");
+                                break;
+
+                        }
+                    }
+                    while (std != 3) ;
+
+
+
+
+
+
+
+
+
+
 
                     break;
 
+
+                        case  3:
+
+
+                            break;
 
                 default:
 

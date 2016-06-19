@@ -8,70 +8,47 @@ package com.company;
     public class Teacher {
 
 
+        public String data[][] = new String[100][5];
+
+    public void Insert(String Id,String name, String qualification,String contact,String salary,int number ){
 
 
-        private  int Id;
-        private String name;
-        private String qualification;
-        private String contact;
-        private int salary;
 
-        public int getId() {
-            return Id;
-        }
+        data [0] = new String[5];
 
-        public void setId(int id) {
-            Id = id;
-        }
+        data[0][0] = "Id";
+        data[0][1] = "Name";
+        data[0][2] = "Qualifications";
+        data[0][3] = "Contact #";
+        data[0][4] = "Salary";
 
-        public String getName() {
-            return name;
-        }
+       data[number] = new String[5];
 
-        public void setName(String name) {
-            this.name = name;
-        }
+        data[number][0] = Id;
+        data[number][1] = name;
+        data[number][2] = qualification;
+        data[number][3] = contact;
+        data[number][4] = salary;
 
-        public String getQualification() {
-            return qualification;
-        }
 
-        public void setQualification(String qualification) {
-            this.qualification = qualification;
-        }
+    }
 
-        public String getContact() {
-            return contact;
-        }
 
-        public void setContact(String contact) {
-            this.contact = contact;
-        }
+        public void View(int n){
+            int i,j;
+            for(i=0;i<n ;i++)
+            {
+                for(j=0;j<5;j++)
+                {
 
-        public int getSalary() {
-            return salary;
-        }
+                    System.out.printf("\t" +data[i][j]);
+                    System.out.printf("\t");
 
-        public void setSalary(int salary) {
-            this.salary = salary;
-        }
 
-        public void Add(int Id,String name, String qualification,String contact,int salary ){
+                }
+                System.out.println();
+            }
 
-            setId(Id);
-            setName(name);
-            setQualification(qualification);
-            setContact(contact);
-            setSalary(salary);
-        }
-
-        public void View(){
-
-            System.out.println("Teacher Id Is : "+ getId());
-            System.out.println("Teacher Name Is : "+getName());
-            System.out.println("Teacher Qualification Is : "+getQualification());
-            System.out.println("Teacher Contact Number Is : "+getContact());
-            System.out.println("Teacher Salary Is : "+getSalary());
 
         }
 
